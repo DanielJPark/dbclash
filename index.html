@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Vroom, Vroom</title>
+    <link rel="stylesheet" href="racer.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="racer.js"></script>
+    <script>
+    $(function(){
+      var game = new Game();
+      game.initialize();
+    });
+    </script>
+  </head>
+  <body>
+    <h1>Let's Race!</h1>
+    <table class="racer_table">
+      <tr id="player1_strip">
+        <td class="active"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="player2_strip">
+        <td class="active"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <div id="winner"></div>
+  </body>
+</html>
