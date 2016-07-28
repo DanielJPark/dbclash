@@ -1,6 +1,6 @@
 var Player = function(name) {
   var name = name;
-  var currentPosition = 0;
+  var currentPosition = 3;
 
   this.getCurrentPosition = function() {
     return currentPosition;
@@ -10,9 +10,14 @@ var Player = function(name) {
     return name;
   }
 
-  this.move = function() {
+  this.moveUp = function() {
     currentPosition++;
   }
+
+  this.moveDown = function() {
+    currentPosition--;
+  }
+
 }
 
 var GameView = function() {
@@ -42,7 +47,9 @@ var GameView = function() {
   }
 
   this.getFinishPosition = function(name) {
-    return getPlayerTrackByName(name).children().length - 1;
+    var print = getPlayerTrackByName(name).children().length - 1;
+    console.log(print)
+  return getPlayerTrackByName(name).children().length - 1;
   }
 
   this.updatePlayerPosition = function(name, position) {
@@ -80,12 +87,14 @@ var Game = function() {
   }
 
   function movePlayer(player) {
-    player.move();
+    player.moveUp();
+    player.moveDown();
     gameView.updatePlayerPosition(player.getName(), player.getCurrentPosition());
   }
 
   function determineWinner(player) {
     var finishPosition = gameView.getFinishPosition(player.getName());
+    console.log(finishPosition)
 
     if(player.getCurrentPosition() == finishPosition) {
       finishGame(player.getName());
